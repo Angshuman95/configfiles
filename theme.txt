@@ -1,0 +1,84 @@
+# arch-suse grub2 theme
+# complements arch-suse-plymouth-theme package
+
+desktop-image:  "background.png"
+
+title-text: ""
+
+terminal-box: "terminal_*.png"
+terminal-font: "Gnu Unifont Mono Regular 16"
+
+# Show Archlinux logo
+
++ image {
+		    id = "__archlogo__"
+		    left = 27%
+		    width = 9%
+		    top = 5%
+		    height = 7%
+		    file = "archlogo.png"
+}
+
++ boot_menu {
+  left = 15%
+  width = 70%
+  top = 36%
+  height = 45%	
+
+  menu_pixmap_style = "boot_menu_*.png"
+
+  item_font = "DejaVu Sans Bold 14"
+  item_color = "#000"
+  item_height = 34
+  item_icon_space = 8
+  item_spacing = 4
+
+  selected_item_font = "DejaVu Sans Bold 14"
+  selected_item_color= "#fff"
+  selected_item_pixmap_style = "select_*.png"
+
+  icon_height = 33
+  icon_width = 33
+
+  scrollbar = true
+  scrollbar_width = 20
+  scrollbar_thumb = "slider_*.png"
+}
+
++ progress_bar {
+  id = "__timeout__"
+
+  left = 28%
+  top = 85%
+  height = 34
+  width = 45%
+
+  font = "DejaVu Sans Bold 14"
+
+  text_color = "#fff"
+  fg_color = "#122359"
+
+  bg_color = "#54608C"
+  border_color = "#fff"
+
+  # instead of the above colors, use pixmaps
+  # bar_style = "progress_bar_*.png"
+  # highlight_style = "progress_highlight_*.png"
+
+  text = "@TIMEOUT_NOTIFICATION_LONG@"
+}
+
+# Show an informational message.
++ hbox {
+		top = 100%-35
+		left = 26%
+		+ label {text = "Enter: " font = "Sans 12" color = "#4c4c4c" align = "left"}
+		+ label {text = "Boot Selection     " font = "Sans 12" color = "#1692d0" align = "left"}
+		+ label {text = "E: " font = "Sans 12" color = "#4c4c4c" align = "left"}
+		+ label {text = "Edit Selection     " font = "Sans 12" color = "#1692d0" align = "left"}
+		+ label {text = "C: " font = "Sans 12" color = "#4c4c4c" align = "left"}
+		+ label {text = "GRUB Commandline     " font = "Sans 12" color = "#1692d0" align = "left"}
+		+ label {text = "Esc: " font = "Sans 12" color = "#4c4c4c" align = "left"}
+		+ label {text = "Back" font = "Sans 12" color = "#1692d0" align = "left"}
+}
+
